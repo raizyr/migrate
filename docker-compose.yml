@@ -2,7 +2,7 @@ go: &go
   image: golang
   working_dir: /go/src/github.com/mattes/migrate
   volumes:
-    - $GOPATH:/go
+    - .:/go/src/github.com/mattes/migrate
 go-test:
   <<: *go
   command: sh -c 'go get -t -v ./... && go test -v ./...'
